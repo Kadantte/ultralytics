@@ -1,4 +1,4 @@
-# Ultralytics YOLO 🚀, AGPL-3.0 license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 """
 Interface for Baidu's RT-DETR, a Vision Transformer-based real-time object detector. RT-DETR offers real-time
 performance and high accuracy, excelling in accelerated backends like CUDA with TensorRT. It features an efficient
@@ -6,8 +6,6 @@ hybrid encoder and IoU-aware query selection for enhanced detection accuracy.
 
 For more information on RT-DETR, visit: https://arxiv.org/pdf/2304.08069.pdf
 """
-
-from pathlib import Path
 
 from ultralytics.engine.model import Model
 from ultralytics.nn.tasks import RTDETRDetectionModel
@@ -36,8 +34,6 @@ class RTDETR(Model):
         Raises:
             NotImplementedError: If the model file extension is not 'pt', 'yaml', or 'yml'.
         """
-        if model and Path(model).suffix not in (".pt", ".yaml", ".yml"):
-            raise NotImplementedError("RT-DETR only supports creating from *.pt, *.yaml, or *.yml files.")
         super().__init__(model=model, task="detect")
 
     @property
